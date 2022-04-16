@@ -87,9 +87,9 @@ input[type="submit"] {
 }
 
 .container-questions {
-    height: 100vh;
+    background-image: url(../img/bg.jpg);
     background-size: cover;
-    background-image: url(/img/bg.jpg);
+    height: 100vh;
 }
 
 .question p{
