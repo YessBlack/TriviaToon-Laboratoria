@@ -3,10 +3,10 @@ export const data = [
         titulo: "Pregunta 1",
         pregunta: "¿Qué serie de dibujos animados tiene la serie de televisión y la comedia de situación más largas en términos de episodios y temporadas en los Estados Unidos??",
         opciones: [
-            "Doctor Who",
+            "Los chicos del Barrio",
             "Dragon Ball",
             "The Simpsons", 
-            "The Bugs Bunny and Tweety Show"
+            "Ed Edd y Eddy"
         ],
         correcta: "The Simpsons"
     },
@@ -16,42 +16,42 @@ export const data = [
         opciones: [
             "Bugs Bunny",
             "The Beatles",
-            "Mickey Mouse",
+            "Walt Disney",
             "Bart Simpsons"   
         ],
         correcta: "Bugs Bunny",
     },
     {
         titulo: "Pregunta 3",
-        pregunta: "¿Quién es el antagonista en el “Rey León”?",
+        pregunta: "¿Cómo se llama la mujer bondadosa pero despistada de la serie Coraje, el perro cobarde?",
         opciones: [
-            "Shenzi",
-            "Timón y Pumba",
-            "Rafiki",
-            "Scar"
+            "Muriel",
+            "Mabel",
+            "Martha",
+            "Maribel"
         ],
-        correcta: "Scar",
+        correcta: "Muriel",
     },
     {
         titulo: "Pregunta 4",
-        pregunta: "¿Qué serie de dibujos animados muestra a un luchador atrapado en el futuro que debe conquistar a un demonio para volver a casa?",
+        pregunta: "¿Mojo Jojo es el villano de qué serie de Cartoon Network?",
         opciones: [
-            "Demon Slayer",
-            "Samurai Jack",
-            "Jujutsu Kaisen",
+            "Johnny Bravo",
+            "Hora de Aventura",
+            "Las Chicas Superpoderosas",
             "Looney Tunes"
         ],
-        correcta: "Samurai Jack",
+        correcta: "Las Chicas Superpoderosas",
     },
     {
         titulo: "Pregunta 5",
-        pregunta: "¿Cómo se llama el perro de la serie “Tom y Jerry?",
+        pregunta: "¿Qué poder único posee Jake el perro en la serie Adventure Time?",
         opciones: [
-            "Goofy",
-            "Timón y Pumba",
-            "Akamaru",
-            "Spike"
+            "Vuela",
+            "Generar Hielo",
+            "Visión de rayos Xamaru",
+            "Cambiar la forma del cuerpo"
         ],
-        correcta: "Spike",
+        correcta: "Cambiar la forma del cuerpo",
     }
 ]
