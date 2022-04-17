@@ -29,7 +29,6 @@ const showTextQuestion = (i) => {
     const question = document.querySelector('.question')
     const textQuestion = document.createElement("p")
 
-    console.log(data[i].pregunta)
     textQuestion.innerHTML = `${data[i].titulo} ${data[i].pregunta}`
     question.appendChild(textQuestion)
 }
@@ -49,14 +48,11 @@ const showOptions = (i) => {
         count++
         fragment.appendChild(button)
     })
-    
     options.appendChild(fragment)
 }
 
-
 //Borrar Preguntas Anteriores
 const deleteQuestion = () => {
-
     //borrar la pregunta
     const question = document.querySelector('.question')
     question.removeChild(question.firstChild)
@@ -68,6 +64,25 @@ const deleteQuestion = () => {
 
 //comprobar respuestas correctas
 let points = 0
+let countP = 1
+
+//Pasar Siguiente pregunta
+const nextQuestion = (countP) => {
+    if(countP === data.length) {
+        //Aqui mostrar Resultado si ha finalizado
+        const pointsDOM = document.querySelector('.points-dom')
+        const playerDOM = document.querySelector('.player-dom')
+        alert(`Felicitaciones ${playerDOM.innerHTML}, tu puntaje es ${pointsDOM.innerHTML}`)
+        location.reload()
+    }else {
+        //sino, pasar a la siguiente pregunta
+        deleteQuestion()
+        showTextQuestion(countP)
+        showOptions(countP)
+        checkChoice(countP)
+    }
+    countP++
+}
 
 const checkChoice = (i) => {
     const choice = document.querySelectorAll('.btn-choice')
@@ -82,6 +97,8 @@ const checkChoice = (i) => {
         choice[2].disabled = true
         choice[3].disabled = true
 
+        nextQuestion(countP)
+        countP++
         //mostrar puntos
         if(e.target.innerHTML === data[i].correcta){
             points++
@@ -93,29 +110,12 @@ const checkChoice = (i) => {
 })
 }
 
-//Pasar a la siguiente pregunta
-const btnNext = document.getElementById('btn-next')
-let countP = 1
-
-btnNext.addEventListener('click', e => {
-    console.log(e)
-    if(countP === data.length) {
-        //Aqui mostrar Resultado
-        alert(`---- NO HAY MAS PREGUNTAS ----`)
-    }else {
-        deleteQuestion()
-        showTextQuestion(countP)
-        showOptions(countP)
-        checkChoice(countP)
-    }
-    countP++
-})
-
 //salir
 const btnExit = document.querySelector('.btn-exit')
 btnExit.addEventListener('click', e => {
     location.reload();
 })
+
 showTextQuestion(0)
 showOptions(0)
 checkChoice(0)
