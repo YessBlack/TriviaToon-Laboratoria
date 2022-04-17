@@ -1,7 +1,7 @@
 export const data = [
     {
         titulo: "Pregunta 1",
-        pregunta: "¿Qué serie de dibujos animados tiene la serie de televisión y la comedia de situación más largas en términos de episodios y temporadas en los Estados Unidos??",
+        pregunta: "¿Qué serie de dibujos animados tiene la serie de televisión y la comedia de situación más largas en términos de episodios y temporadas en los Estados Unidos?",
         opciones: [
             "Los chicos del Barrio",
             "Dragon Ball",

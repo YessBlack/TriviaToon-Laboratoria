@@ -29,7 +29,6 @@ const showTextQuestion = (i) => {
     const question = document.querySelector('.question')
     const textQuestion = document.createElement("p")
 
-    console.log(data[i].pregunta)
     textQuestion.innerHTML = `${data[i].titulo} ${data[i].pregunta}`
     question.appendChild(textQuestion)
 }
@@ -52,19 +51,6 @@ const showOptions = (i) => {
     options.appendChild(fragment)
 }
 
-
-//Borrar Preguntas Anteriores
-const deleteQuestion = () => {
-
-    //borrar la pregunta
-    const question = document.querySelector('.question')
-    question.removeChild(question.firstChild)
-
-    //borrar las opciones
-    const options = document.querySelector('.options')
-    options.innerHTML = ''
-}
-
 //comprobar respuestas correctas
 let points = 0
 
@@ -81,7 +67,7 @@ const checkChoice = (i) => {
         choice[2].disabled = true
         choice[3].disabled = true
 
-        //mostrar puntos
+        //mostrar puntos en el DOM
         if(e.target.innerHTML === data[i].correcta){
             points++
             pointsDOM.innerHTML = points
@@ -92,12 +78,24 @@ const checkChoice = (i) => {
 })
 }
 
+//Borrar Preguntas Anteriores
+const deleteQuestion = () => {
+    //borrar la pregunta
+    const question = document.querySelector('.question')
+    question.removeChild(question.firstChild)
+
+    //borrar las opciones
+    const options = document.querySelector('.options')
+    options.innerHTML = ''
+}
+
+
+
 //Pasar a la siguiente pregunta
 const btnNext = document.getElementById('btn-next')
 let countP = 1
 
-btnNext.addEventListener('click', e => {
-    console.log(e)
+btnNext.addEventListener('click', () => {
     if(countP === data.length) {
         //Aqui mostrar Resultado
         const pointsDOM = document.querySelector('.points-dom')
