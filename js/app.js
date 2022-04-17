@@ -8,18 +8,18 @@ play.addEventListener('click', e => {
     const playerDOM = document.querySelector('.player-dom')
     playerDOM.innerHTML = player
 
+    //Ocultar modal
     const hideModal = document.querySelector('.modal-player')
     hideModal.classList.add('hide-modal')
 
+    //Mostrar juego
     const showContent = document.querySelector('.container-game')
     showContent.classList.add('show-content')
 
     e.preventDefault()
 })
-//Ocultar modal
 
 //preguntas
-
 import { data } from "./preguntas.js";
 
 //---- Mostrar preguntas ----
@@ -29,6 +29,7 @@ const showTextQuestion = (i) => {
     const question = document.querySelector('.question')
     const textQuestion = document.createElement("p")
 
+    console.log(data[i].pregunta)
     textQuestion.innerHTML = `${data[i].titulo} ${data[i].pregunta}`
     question.appendChild(textQuestion)
 }
@@ -97,6 +98,7 @@ const btnNext = document.getElementById('btn-next')
 let countP = 1
 
 btnNext.addEventListener('click', e => {
+    console.log(e)
     if(countP === data.length) {
         //Aqui mostrar Resultado
         alert(`---- NO HAY MAS PREGUNTAS ----`)
